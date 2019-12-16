@@ -1,2 +1,19 @@
-$primaryColour: #bfa450;
-$secondaryColour: #67f459;
+$dark-blue: #013355;
+$light-blue: #2374AB;
+$gray-blue: #DAEBFA;
+$light-gray: #fafafa;
+$font-family: 'Roboto', sans-serif;
+
+$primaryColour: $dark-blue;
+$secondaryColour: $light-gray;
+
+// responsive break-point
+$breakpoint-small: 768px;
+$breakpoint-medium: 1024px;
+$breakpoint-large: 1200px;
+
+$mediaQueryBreakpoints: (
+        sm  : $breakpoint-small,
+        md  : $breakpoint-medium,
+        lg  : $breakpoint-large
+);

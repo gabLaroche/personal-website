@@ -1,6 +1,37 @@
-@import '_utilities/variables';
+@import '_utilities/mixins';
+@import '_utilities/icons';
+
+:root {
+  font-size: 10px;
+}
 
 body {
-  background-color: $primaryColour;
-  color: $secondaryColour;
+  background-color: $secondaryColour;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-family: $font-family;
+
+  @include media-up(md) {
+    max-width: 90vw;
+  }
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $light-blue;
+  transition: color 0.35s ease;
+}
+
+a:hover, a:focus {
+  color: $primaryColour;
+}
+
+h2 {
+  color: $primaryColour;
+  font-size: 3rem;
 }

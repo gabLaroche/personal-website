@@ -1,0 +1,13 @@
+@import "variables";
+
+@mixin media-up($breakpointKey) {
+  @media screen and (min-width: map_get($mediaQueryBreakpoints, $breakpointKey)) {
+    @content
+  }
+}
+
+@mixin media-down($breakpointKey) {
+  @media screen and (max-width: map_get($mediaQueryBreakpoints, $breakpointKey) - 1px) {
+    @content
+  }
+}
