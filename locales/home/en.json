@@ -1,0 +1,58 @@
+{
+  "head": {
+    "title": "Gabriel Laroche",
+    "lang": "en",
+    "cssPath": "/css/pages/home.css"
+  },
+  "switchLang": {
+    "title": "Passer en <strong>Français</strong>",
+
+    "url": "/fr"
+  },
+  "hero": "Hi! I'm <strong>Gabriel Laroche</strong>, your friendly neighbourhood <strong>Web Developer!</strong>",
+  "projects": {
+    "title": "My Projects",
+    "list": [
+      {
+        "title": "IE11 Death Countdown",
+        "demoUrl": "https://death-to-ie11.netlify.com",
+        "sourceMsg": "Source code",
+        "sourceUrl": "https://github.com/gablaroche/death-to-ie11"
+      },
+      {
+        "title": "Simple UI for the Bored API",
+        "demoUrl": "https://bored-ui.netlify.com/",
+        "sourceMsg": "Source code",
+        "sourceUrl": "https://github.com/gablaroche/bored-ui"
+      },
+      {
+        "title": "Simple Case Converter",
+        "demoUrl": "https://simple-case-conversion.netlify.com",
+        "sourceMsg": "Source code",
+        "sourceUrl": "https://github.com/gabLaroche/simple-text-conversion"
+      },
+      {
+        "title": "Lyrics CLI",
+        "demoUrl": "https://www.npmjs.com/package/my-lyrics-cli",
+        "sourceMsg": "Source code",
+        "sourceUrl": "https://github.com/gablaroche/lyrics-cli"
+      }
+    ]
+  },
+  "skills": {
+    "title": "My Skill Set",
+    "list": [
+      "HTML5",
+      "CSS3",
+      "Javascript",
+      "Sass",
+      "ReactJS",
+      "Next.js",
+      "TypeScript"
+    ]
+  },
+  "footer": {
+    "source": "Built with love and <a title=\"Link to the source code of this website\" href=\"https://github.com/gablaroche/portfolio2\">code</a>",
+    "copyright": "All rights reserved"
+  }
+}

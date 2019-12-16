@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "general.css",
+	"sources": [
+		"../scss/general.scss",
+		"../scss/_utilities/_variables.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,IAAI,CAAC;EACH,gBAAgB,ECHF,OAAO;EDIrB,KAAK,ECHW,OAAO,GDIxB"
+}
