@@ -28,5 +28,6 @@ app.get('/fr', function (req, res) {
     res.render('home', frJson);
 });
 
+app.set('views', path.join(__dirname, 'views/'));
 app.use(express.static(__dirname + '/public'));
 app.listen(port);
