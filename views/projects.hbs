@@ -1,0 +1,12 @@
+<main class="container">
+    <a href="/">{{{content.returnToSite}}}</a>
+    <h1>{{content.title}}</h1>
+    <ul class="projects__list">
+        {{#each projects.projects}}
+            <li class="projects__list-item">
+                <a class="projects__list-item--demo" href="{{this.demoUrl}}">{{this.title}}</a>
+                <a class="projects__list-item--source" href="{{this.sourceUrl}}">{{../projects.sourceMsg}}</a>
+            </li>
+        {{/each}}
+    </ul>
+</main>

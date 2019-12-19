@@ -1,0 +1,30 @@
+{
+  "sourceMsg": "Source code",
+  "projects": [
+    {
+      "title": "Exponential Calculator",
+      "demoUrl": "https://exponential-calculator.netlify.com/",
+      "sourceUrl": "https://github.com/gablaroche/exponential-calculator"
+    },
+    {
+      "title": "IE11 Death Countdown",
+      "demoUrl": "https://death-to-ie11.netlify.com",
+      "sourceUrl": "https://github.com/gablaroche/death-to-ie11"
+    },
+    {
+      "title": "Simple Case Converter",
+      "demoUrl": "https://simple-case-conversion.netlify.com",
+      "sourceUrl": "https://github.com/gabLaroche/simple-text-conversion"
+    },
+    {
+      "title": "Lyrics CLI",
+      "demoUrl": "https://www.npmjs.com/package/my-lyrics-cli",
+      "sourceUrl": "https://github.com/gablaroche/lyrics-cli"
+    },
+    {
+      "title": "Simple UI for the Bored API",
+      "demoUrl": "https://bored-ui.netlify.com/",
+      "sourceUrl": "https://github.com/gablaroche/bored-ui"
+    }
+  ]
+}

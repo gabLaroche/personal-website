@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{head.lang}}">
+<html lang="{{content.head.lang}}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{head.title}}</title>
-    <link rel="stylesheet" href="{{head.cssPath}}">
+    <title>{{content.head.title}}</title>
+    <link rel="stylesheet" href="{{content.head.cssPath}}">
 </head>
 <body>
     {{{body}}}
-<footer>
-
-</footer>
+    <footer class="footer">
+        {{#if content.footer.social.length}}
+            <ul class="footer__social-list">
+                {{#each content.footer.social}}
+                    <li>
+                        <a href="{{this.href}}" class="{{this.iconClass}}" title="{{this.title}}"></a>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        <p class="footer__copyright">{{{content.footer.copyright}}}</p>
+        <p class="footer__source">{{{content.footer.source}}}</p>
+    </footer>
+    <script src="https://unpkg.com/mailgo@0.6.7/dist/mailgo.min.js"></script>
 </body>
 </html>

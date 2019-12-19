@@ -1,0 +1,35 @@
+<main>
+
+    <a href="/">{{{content.returnToSite}}}</a>
+    <h1>{{content.title}}</h1>
+    <details open>
+        <summary>{{content.filtersTitle}}</summary>
+        <ul class="filter__list">
+            {{#each content.filters}}
+                <li class="filter__list-item">
+                    <button id="{{this.id}}" {{#if this.first}}class="is-active"{{/if}}>
+                        {{this.text}}
+                    </button>
+                </li>
+            {{/each}}
+        </ul>
+    </details>
+    <h2>{{content.linksTitle}}</h2>
+    <ul class="links__list">
+        {{#each content.links}}
+            <li class="links__list-item" data-category="{{this.category}}">
+                <a class="links__list-item-link {{this.class}}"
+                   href="{{this.url}}">
+                    {{#if this.icon}}
+                        <span class="{{this.icon}}"></span>
+                    {{/if}}
+                    {{#if this.imageSrc}}
+                        <img src="{{this.imageSrc}}" {{#if this.imageAlt}}alt="{{this.imageAlt}}"{{/if}} />
+                    {{/if}}
+                    <span>{{this.text}}</span>
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</main>
+<script type="text/javascript" src="/js/filter-links.js"></script>

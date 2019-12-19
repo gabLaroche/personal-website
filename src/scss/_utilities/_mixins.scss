@@ -11,3 +11,8 @@
     @content
   }
 }
+
+@mixin container {
+  max-width: 85vw;
+  margin: 0 auto;
+}

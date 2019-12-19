@@ -1,0 +1,7 @@
+@import "../general";
+@import "../_partials/projects";
+
+main {
+  @include container;
+  margin-top: 2rem;
+}

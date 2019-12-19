@@ -44,17 +44,42 @@
 .icon-unsplash:before {
   content: "\e908"; }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 85vw;
+  margin: 0 auto; }
+  .footer__social-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px; }
+
 :root {
   font-size: 10px; }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
 body {
+  margin: 0 auto 100px;
+  padding: 25px;
   background-color: #fafafa;
-  margin: 0 auto;
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif; }
   @media screen and (min-width: 1024px) {
     body {
       max-width: 90vw; } }
+
+footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden; }
 
 ul {
   padding: 0;
@@ -72,12 +97,39 @@ h2 {
   color: #013355;
   font-size: 3rem; }
 
+.projects__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 768px) {
+    .projects__list {
+      justify-content: space-between; } }
+
+.projects__list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .projects__list-item {
+      text-align: left;
+      margin: 1rem 2rem; } }
+  .projects__list-item:first-child {
+    margin-left: 0; }
+  .projects__list-item:last-child {
+    margin-right: 0; }
+  .projects__list-item a {
+    margin: 1rem 0; }
+  .projects__list-item-demo {
+    font-size: 2.5rem; }
+
 .hero__container {
   height: 350px;
   background: linear-gradient(180deg, #DAEBFA 0%, rgba(255, 255, 255, 0) 150%);
   position: relative;
   padding: 2rem; }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     .hero__container {
       height: 540px; } }
 
@@ -94,14 +146,14 @@ h2 {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     .hero__title {
       width: 75%;
       font-size: 7.2rem; } }
 
 .hero__bug {
   display: none; }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     .hero__bug {
       display: block;
       position: absolute; } }
@@ -145,36 +197,11 @@ h2 {
 .projects__container, .skills__container {
   margin: 0 0 10rem; }
 
-.projects__list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; }
-  @media screen and (min-width: 1024px) {
-    .projects__list {
-      justify-content: space-between; } }
-
-.projects__list-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1rem 0;
-  text-align: center; }
-  @media screen and (min-width: 1024px) {
-    .projects__list-item {
-      text-align: left;
-      margin: 1rem 2rem; } }
-  .projects__list-item:first-child {
-    margin-left: 0; }
-  .projects__list-item:last-child {
-    margin-right: 0; }
-  .projects__list-item-demo {
-    font-size: 2.5rem; }
-
 .skills__list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap; }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     .skills__list {
       justify-content: space-between; } }
 
@@ -190,7 +217,7 @@ h2 {
   color: #013355;
   font-size: 1.8rem;
   margin: 0.5rem; }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     .skills__list-item {
       margin: 0; }
       .skills__list-item:nth-child(2n) {

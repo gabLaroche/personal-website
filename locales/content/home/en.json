@@ -1,0 +1,63 @@
+{
+  "head": {
+    "title": "Gabriel Laroche",
+    "lang": "en",
+    "cssPath": "/css/pages/home.css"
+  },
+  "switchLang": {
+    "title": "Passer en <strong>Français</strong>",
+
+    "url": "/fr/"
+  },
+  "hero": "Hi! I'm <strong>Gabriel Laroche</strong>, your friendly neighbourhood <strong>Web Developer!</strong>",
+  "projects": {
+    "title": "My Projects",
+    "link": {
+      "url": "/en/projects/",
+      "title": "See all of my projects"
+    }
+  },
+  "skills": {
+    "title": "My Skill Set",
+    "list": [
+      "HTML5",
+      "CSS3",
+      "Javascript",
+      "Sass",
+      "ReactJS",
+      "Next.js",
+      "TypeScript"
+    ]
+  },
+  "footer": {
+    "source": "Built with love and <a title=\"Link to the source code of this website\" href=\"https://github.com/gablaroche/personal-website\">code</a>",
+    "copyright": "© 2019 Gabriel Laroche. All Rights Reserved",
+    "social": [
+      {
+        "href": "mailto:hi@gabriellaroche.dev",
+        "iconClass": "icon-mail",
+        "title": "E-mail"
+      },
+      {
+        "href": "https://dev.to/gablaroche",
+        "iconClass": "icon-dev",
+        "title": "Dev.to"
+      },
+      {
+        "href": "https://github.com/gabLaroche",
+        "iconClass": "icon-github",
+        "title": "Github"
+      },
+      {
+        "href": "https://www.linkedin.com/in/gabriel-laroche-2b3706125/",
+        "iconClass": "icon-linkedin",
+        "title": "Linkedin"
+      },
+      {
+        "href": "https://twitter.com/glarocheDev",
+        "iconClass": "icon-twitter",
+        "title": "Twitter"
+      }
+    ]
+  }
+}

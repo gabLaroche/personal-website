@@ -1,12 +1,61 @@
 const express = require('express');
 const path = require('path');
 const exphbs  = require('express-handlebars');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 3030;
 
-app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.use(cookieParser());
+app.use(express.static(__dirname + '/public'));
+
+let lang = 'en';
+
+const hbs = exphbs.create({
+    helpers: {
+        each_upto: function(ary, max, options) {
+            if(!ary || ary.length == 0) {
+                return options.inverse(this);
+            }
+
+            const result = [ ];
+            for(let i = 0; i < max && i < ary.length; ++i)
+                result.push(options.fn(ary[i]));
+            return result.join('');
+        },
+        if_cond: function (v1, operator, v2, options) {
+            switch (operator) {
+                case '==':
+                    return (v1 == v2) ? options.fn(this) : options.inverse(this);
+                case '===':
+                    return (v1 === v2) ? options.fn(this) : options.inverse(this);
+                case '!=':
+                    return (v1 != v2) ? options.fn(this) : options.inverse(this);
+                case '!==':
+                    return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+                case '<':
+                    return (v1 < v2) ? options.fn(this) : options.inverse(this);
+                case '<=':
+                    return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+                case '>':
+                    return (v1 > v2) ? options.fn(this) : options.inverse(this);
+                case '>=':
+                    return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+                case '&&':
+                    return (v1 && v2) ? options.fn(this) : options.inverse(this);
+                case '||':
+                    return (v1 || v2) ? options.fn(this) : options.inverse(this);
+                default:
+                    return options.inverse(this);
+            }
+        }
+    },
+    extname: '.hbs'
+});
+app.engine('.hbs', exphbs({...hbs}));
 app.set('view engine', '.hbs');
+app.set('views', path.join(__dirname, 'views/'));
+
 
 app.get("/get", (req, res, next) => {
     res.json({
@@ -19,52 +68,55 @@ app.post('/post', function(request, response) {
 });
 
 app.get('/', (req, res) => {
-    var lang = req.acceptsLanguage('fr', 'en');
-    if (lang) {
-        res.redirect(`/${lang}`);
-    } else {
-        res.redirect('/en');
-    }
+    lang = req.cookies.lang || req.acceptsLanguages('fr', 'en') || 'en';
+    res.redirect(`/${lang}/`);
 });
 
-app.get('/en', (req, res) => {
-    const enJson = require('./locales/home/en.json');
-    res.render('home', enJson);
-    /*const testProject = {projects: [
-            {
-                "title": "IE11 Death Countdown",
-                "demoUrl": "https://death-to-ie11.netlify.com",
-                "sourceMsg": "Source code",
-                "sourceUrl": "https://github.com/gablaroche/death-to-ie11"
-            },
-            {
-                "title": "Simple UI for the Bored API",
-                "demoUrl": "https://bored-ui.netlify.com/",
-                "sourceMsg": "Source code",
-                "sourceUrl": "https://github.com/gablaroche/bored-ui"
-            },
-            {
-                "title": "Simple Case Converter",
-                "demoUrl": "https://simple-case-conversion.netlify.com",
-                "sourceMsg": "Source code",
-                "sourceUrl": "https://github.com/gabLaroche/simple-text-conversion"
-            },
-            {
-                "title": "Lyrics CLI",
-                "demoUrl": "https://www.npmjs.com/package/my-lyrics-cli",
-                "sourceMsg": "Source code",
-                "sourceUrl": "https://github.com/gablaroche/lyrics-cli"
-            }
-        ]}
+app.get(`/en/`, (req, res) => {
+    const contentJson = require('./locales/content/home/en.json');
+    const projectJson = require('./locales/data/projects/en.json');
+    res.cookie("lang", 'en');
     res.render('home', {
-        pageContent: enJson,
-        projects: testProject
-    });*/
+        content: contentJson,
+        projects: projectJson
+    });
 });
 
-app.get('/fr', (req, res) => {
-    const frJson = require('./locales/home/fr.json');
-    res.render('home', frJson);
+app.get('/fr/', (req, res) => {
+    const contentJson = require('./locales/content/home/fr.json');
+    const projectJson = require('./locales/data/projects/fr.json');
+    res.cookie("lang", 'fr');
+    res.render('home', {
+        content: contentJson,
+        projects: projectJson
+    });
+});
+
+app.get('/en/projects/', (req, res) => {
+    const contentJson = require('./locales/content/projects/en.json');
+    const projectJson = require('./locales/data/projects/en.json');
+    res.render('projects', {
+        content: contentJson,
+        projects: projectJson
+    });
+});
+
+app.get('/fr/projects/', (req, res) => {
+    const contentJson = require('./locales/content/projects/fr.json');
+    const projectJson = require('./locales/data/projects/fr.json');
+    res.render('projects', {
+        content: contentJson,
+        projects: projectJson
+    });
+});
+
+app.get('/en/links/', (req, res) => {
+    const contentJson = require('./locales/content/links/en.json');
+    res.render('links', {content: contentJson});
+});
+
+app.get('/fr/links/', (req, res) => {
+    res.redirect('/en/links/');
 });
 
 /** START Redirect legacy site to proper urls **/
@@ -84,7 +136,4 @@ app.get('/simple-toolkit/simple-case-conversion', (req, res) => {
     res.redirect('https://simple-case-conversion.netlify.com');
 });
 /** END Redirect legacy site to proper urls **/
-
-app.set('views', path.join(__dirname, 'views/'));
-app.use(express.static(__dirname + '/public'));
 app.listen(port);

@@ -1,19 +1,36 @@
 @import '_utilities/mixins';
 @import '_utilities/icons';
+@import "_partials/footer";
 
 :root {
   font-size: 10px;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
+  margin: 0 auto 100px;
+  padding: 25px;
   background-color: $secondaryColour;
-  margin: 0 auto;
   font-size: 1.6rem;
   font-family: $font-family;
 
   @include media-up(md) {
     max-width: 90vw;
   }
+}
+
+footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
 }
 
 ul {

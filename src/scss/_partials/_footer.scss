@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include container;
+
+  &__social-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+  }
+}
