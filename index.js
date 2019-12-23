@@ -119,6 +119,16 @@ app.get('/fr/links/', (req, res) => {
     res.redirect('/en/links/');
 });
 
+app.get('/en/useful-functions/', (req, res) => {
+    const contentJson = require('./locales/content/useful-functions/en.json');
+    res.render('links', {content: contentJson});
+});
+
+app.get('/fr/useful-functions/', (req, res) => {
+    const contentJson = require('./locales/content/useful-functions/fr.json');
+    res.render('links', {content: contentJson});
+});
+
 /** START Redirect legacy site to proper urls **/
 app.get('/death-to-ie11', (req, res) => {
     res.redirect('https://death-to-ie11.netlify.com');
