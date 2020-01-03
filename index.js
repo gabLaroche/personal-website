@@ -101,7 +101,7 @@ app.get('/en/projects/', (req, res) => {
     });
 });
 
-app.get('/fr/projects/', (req, res) => {
+app.get('/fr/projets/', (req, res) => {
     const contentJson = require('./locales/content/projects/fr.json');
     const projectJson = require('./locales/data/projects/fr.json');
     res.render('projects', {
@@ -115,7 +115,7 @@ app.get('/en/links/', (req, res) => {
     res.render('links', {content: contentJson});
 });
 
-app.get('/fr/links/', (req, res) => {
+app.get('/fr/liens/', (req, res) => {
     res.redirect('/en/links/');
 });
 
@@ -124,7 +124,7 @@ app.get('/en/useful-functions/', (req, res) => {
     res.render('links', {content: contentJson});
 });
 
-app.get('/fr/useful-functions/', (req, res) => {
+app.get('/fr/fonctions-utiles/', (req, res) => {
     const contentJson = require('./locales/content/useful-functions/fr.json');
     res.render('links', {content: contentJson});
 });

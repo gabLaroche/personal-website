@@ -57,7 +57,7 @@
 .bug2 {
   width: 100px;
   top: 40%;
-  left: 8%;
+  left: 6%;
   transform: rotate(33deg);
 }
 
@@ -77,7 +77,7 @@
 .bug5 {
   width: 90px;
   top: 60%;
-  right: 10%;
+  right: 6%;
   transform: rotate(-35deg);
 }
 
@@ -101,8 +101,8 @@
   }
 
   &__list-item {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -111,10 +111,12 @@
     text-align: center;
     color: $primaryColour;
     font-size: 1.8rem;
-    margin: 0.5rem;
+    margin: 1rem;
 
     @include media-up(sm) {
-      margin: 0;
+      margin: 0.5rem;
+      width: 100px;
+      height: 100px;
 
       &:nth-child(2n) {
         transform: translateY(-2rem);

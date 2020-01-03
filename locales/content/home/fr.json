@@ -12,7 +12,7 @@
   "projects": {
     "title": "Mes Projets",
     "link": {
-      "url": "/fr/projects/",
+      "url": "/fr/projets/",
       "title": "Voir tous mes projets"
     }
   },
@@ -30,7 +30,7 @@
   },
   "footer": {
     "source": "Construit avec de l'amour et du <a title=\"Lien vers le code source de ce site web\" href=\"https://github.com/gablaroche/personal-website\">code</a>",
-    "copyright": "© 2019 Gabriel Laroche. Tout droits réservé",
+    "copyright": "Gabriel Laroche. Tout droits réservé",
     "social": [
       {
         "href": "mailto:hi@gabriellaroche.dev",

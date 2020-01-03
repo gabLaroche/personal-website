@@ -9,7 +9,12 @@
 </header>
 <main class="container">
     <section class="projects__container">
-        <h2 class="projects__title">{{content.projects.title}}</h2>
+        <div class="projects__title-container">
+            <h2 class="projects__title">{{content.projects.title}}</h2>
+            {{#if_cond projects.projects.length '>' 4}}
+                <a class="projects__view-all projects__view-all--desktop" href="{{content.projects.link.url}}">{{content.projects.link.title}} &rarr;</a>
+            {{/if_cond}}
+        </div>
         <ul class="projects__list">
         {{#each_upto projects.projects 4}}
             <li class="projects__list-item">
@@ -19,7 +24,7 @@
         {{/each_upto}}
         </ul>
         {{#if_cond projects.projects.length '>' 4}}
-            <a href="{{content.projects.link.url}}">{{content.projects.link.title}}</a>
+            <a class="projects__view-all projects__view-all--mobile" href="{{content.projects.link.url}}">{{content.projects.link.title}} &rarr;</a>
         {{/if_cond}}
     </section>
     <section class="skills__container">

@@ -51,4 +51,9 @@ a:hover, a:focus {
 h2 {
   color: $primaryColour;
   font-size: 3rem;
+  text-align: center;
+
+  @include media-up(sm) {
+    text-align: left;
+  }
 }

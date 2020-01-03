@@ -18,9 +18,10 @@
                 {{/each}}
             </ul>
         {{/if}}
-        <p class="footer__copyright">{{{content.footer.copyright}}}</p>
+        <p class="footer__copyright"><span class="footer__current-year"></span>&nbsp;{{{content.footer.copyright}}}</p>
         <p class="footer__source">{{{content.footer.source}}}</p>
     </footer>
+    <script src="/js/currentYear.js" type="text/javascript"></script>
     <script src="https://unpkg.com/mailgo@0.6.7/dist/mailgo.min.js"></script>
 </body>
 </html>

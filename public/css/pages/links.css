@@ -45,11 +45,13 @@
   content: "\e908"; }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 85vw;
   margin: 0 auto; }
+  @media screen and (min-width: 1024px) {
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; } }
   .footer__social-list {
     display: grid;
     grid-auto-flow: column;
@@ -95,7 +97,11 @@ a:hover, a:focus {
 
 h2 {
   color: #013355;
-  font-size: 3rem; }
+  font-size: 3rem;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    h2 {
+      text-align: left; } }
 
 h1 {
   text-align: center; }

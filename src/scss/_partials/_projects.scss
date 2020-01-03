@@ -1,11 +1,20 @@
 .projects {
-  &__list {
+
+  &__title-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
 
     @include media-up(sm) {
       justify-content: space-between;
+    }
+  }
+
+  &__list {
+    @include media-up(sm) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 
@@ -13,7 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     text-align: center;
     @include media-up(sm) {
       text-align: left;
@@ -29,11 +38,28 @@
     }
 
     a {
-      margin: 1rem 0;
+      margin: 0.5rem 0;
     }
 
     &-demo {
       font-size: 2.5rem;
+    }
+  }
+
+  &__view-all {
+    &--mobile {
+      display: block;
+      text-align: center;
+      @include media-up(sm) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+      @include media-up(sm) {
+        display: initial;
+      }
     }
   }
 }

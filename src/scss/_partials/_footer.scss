@@ -1,8 +1,11 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   @include container;
+
+  @include media-up(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__social-list {
     display: grid;
