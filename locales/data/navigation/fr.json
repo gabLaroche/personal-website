@@ -1,0 +1,27 @@
+{
+  "list": [
+    {
+      "url": "/fr/",
+      "image": {
+        "src": "/favicon.ico",
+        "alt": "Page d'accueil"
+      }
+    },
+    {
+      "title": "Projets",
+      "url": "/fr/projets/"
+    },
+    {
+      "title": "Links",
+      "url": "/fr/links/"
+    },
+    {
+      "title": "Uses",
+      "url": "/fr/uses/"
+    },
+    {
+      "title": "Code snippets",
+      "url": "/fr/snippets/"
+    }
+  ]
+}

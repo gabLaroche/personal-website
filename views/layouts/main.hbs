@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{content.head.title}}</title>
     <link rel="stylesheet" href="{{content.head.cssPath}}">
-    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+    <!-- Fathom - simple website analytics - https://usefathom.com/ref/FQZUZM -> Get $10 off your first invoice
+    Why you should Switch to Fathom Analytics
+    - You don't need to display those pesky cookie notices as they don't use cookies, nor does Fathom track invasive data.
+    - Fathom offers simple, straight-forward website analytics.
+    - Fathom is focused on privacy for website visitors, Fathom doesn't track them, save their personal information, or need it to be profitable.
+    - Fathom has hundreds of customers and tracks tens of millions of page views per month.
+    - Fathom can handle viral content without breaking a sweat, so your site won't slow down because of us.
+    -->
     <script>
         (function(f, a, t, h, o, m){
             a[h]=a[h]||function(){
@@ -22,21 +29,46 @@
     <!-- / Fathom -->
 </head>
 <body>
-    {{{body}}}
-    <footer class="footer">
-        {{#if content.footer.social.length}}
-            <ul class="footer__social-list">
-                {{#each content.footer.social}}
-                    <li>
-                        <a href="{{this.href}}" class="{{this.iconClass}}" title="{{this.title}}"></a>
-                    </li>
-                {{/each}}
-            </ul>
-        {{/if}}
-        <p class="footer__copyright"><span class="footer__current-year"></span>&nbsp;{{{content.footer.copyright}}}</p>
-        <p class="footer__source">{{{content.footer.source}}}</p>
-    </footer>
-    <script src="/js/currentYear.js" type="text/javascript"></script>
-    <script src="https://unpkg.com/mailgo@0.6.7/dist/mailgo.min.js"></script>
+{{#if navigation}}
+    <nav class="navigation">
+        <ul class="navigation__list">
+            {{#each navigation.list}}
+                <li class="navigation__list-item">
+                    <a class="navigation__link" href="{{this.url}}">
+                        {{#if this.image}}
+                            <img src="{{this.image.src}}" alt="{{this.image.alt}}" />
+                        {{/if}}
+                        {{#if this.title}}
+                            {{{this.title}}}
+                        {{/if}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </nav>
+{{/if}}
+{{{body}}}
+<footer class="footer">
+    {{#if content.footer.social.length}}
+        <ul class="footer__social-list">
+            {{#each content.footer.social}}
+                <li>
+                    <a href="{{this.href}}" class="{{this.iconClass}}" title="{{this.title}}"></a>
+                </li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    <p class="footer__copyright"><span class="footer__current-year"></span>&nbsp;{{{content.footer.copyright}}}</p>
+    <p class="footer__source">{{{content.footer.source}}}</p>
+</footer>
+<script type="text/javascript">
+    (function() {
+        const currentYearElem = document.querySelector('.footer__current-year');
+        const currentYear = new Date().getFullYear();
+
+        currentYearElem.innerHTML = `&copy; ${currentYear.toString()}`;
+    }());
+</script>
+<script src="https://unpkg.com/mailgo@0.6.7/dist/mailgo.min.js"></script>
 </body>
 </html>

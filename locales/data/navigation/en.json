@@ -1,0 +1,27 @@
+{
+  "list": [
+    {
+      "url": "/en/",
+      "image": {
+        "src": "/favicon.ico",
+        "alt": "Home"
+      }
+    },
+    {
+      "title": "Projects",
+      "url": "/en/projects/"
+    },
+    {
+      "title": "Links",
+      "url": "/en/links/"
+    },
+    {
+      "title": "Uses",
+      "url": "/en/uses/"
+    },
+    {
+      "title": "Code snippets",
+      "url": "/en/snippets/"
+    }
+  ]
+}

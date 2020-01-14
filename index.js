@@ -110,6 +110,10 @@ app.get('/fr/projets/', (req, res) => {
     });
 });
 
+app.get('/fr/projects/', (req, res) => {
+    res.redirect('/fr/projets/');
+});
+
 app.get('/en/links/', (req, res) => {
     const contentJson = require('./locales/content/links/en.json');
     res.render('links', {content: contentJson});
@@ -119,14 +123,28 @@ app.get('/fr/liens/', (req, res) => {
     res.redirect('/en/links/');
 });
 
-app.get('/en/useful-functions/', (req, res) => {
-    const contentJson = require('./locales/content/useful-functions/en.json');
-    res.render('links', {content: contentJson});
+app.get('/fr/links/', (req, res) => {
+    res.redirect('/fr/liens/');
 });
 
-app.get('/fr/fonctions-utiles/', (req, res) => {
-    const contentJson = require('./locales/content/useful-functions/fr.json');
-    res.render('links', {content: contentJson});
+app.get('/en/snippets/', (req, res) => {
+    const contentJson = require('./locales/content/snippets/en.json');
+    res.render('useful-functions', {content: contentJson});
+});
+
+app.get('/fr/snippets/', (req, res) => {
+    const contentJson = require('./locales/content/snippets/fr.json');
+    res.render('snippets', {content: contentJson});
+});
+
+app.get('/en/uses/', (req, res) => {
+    const contentJson = require('./locales/content/uses/en.json');
+    res.render('uses', {content: contentJson});
+});
+
+app.get('/fr/uses/', (req, res) => {
+    const contentJson = require('./locales/content/uses/fr.json');
+    res.render('uses', {content: contentJson});
 });
 
 /** START Redirect legacy site to proper urls **/
