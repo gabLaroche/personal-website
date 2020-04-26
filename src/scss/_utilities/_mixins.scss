@@ -15,4 +15,8 @@
 @mixin container {
   max-width: 85vw;
   margin: 0 auto;
+  padding: 25px;
+  @include media-up(md) {
+    max-width: 90vw;
+  }
 }

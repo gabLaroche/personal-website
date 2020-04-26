@@ -13,17 +13,13 @@ html {
 
 body {
   margin: 0 auto 100px;
-  padding: 25px;
   background-color: $secondaryColour;
   font-size: 1.6rem;
   font-family: $font-family;
-
-  @include media-up(md) {
-    max-width: 90vw;
-  }
 }
 
 footer {
+  @include container;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);

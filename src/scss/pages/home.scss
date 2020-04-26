@@ -81,6 +81,15 @@
   transform: rotate(-35deg);
 }
 
+.wave {
+  position: absolute;
+  width: 100vw;
+  height: 97px;
+  bottom: 0;
+  left: 0;
+  background-image: url("../../wave.svg");
+}
+
 .container {
   @include container;
 }

@@ -46,7 +46,11 @@
 
 .footer {
   max-width: 85vw;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 25px; }
+  @media screen and (min-width: 1024px) {
+    .footer {
+      max-width: 90vw; } }
   @media screen and (min-width: 1024px) {
     .footer {
       display: flex;
@@ -66,15 +70,14 @@ html {
 
 body {
   margin: 0 auto 100px;
-  padding: 25px;
   background-color: #fafafa;
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif; }
-  @media screen and (min-width: 1024px) {
-    body {
-      max-width: 90vw; } }
 
 footer {
+  max-width: 85vw;
+  margin: 0 auto;
+  padding: 25px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -82,6 +85,9 @@ footer {
   height: 100px;
   width: 100%;
   overflow: hidden; }
+  @media screen and (min-width: 1024px) {
+    footer {
+      max-width: 90vw; } }
 
 ul {
   padding: 0;
@@ -152,6 +158,10 @@ h2 {
 main {
   max-width: 85vw;
   margin: 0 auto;
+  padding: 25px;
   margin-top: 2rem; }
+  @media screen and (min-width: 1024px) {
+    main {
+      max-width: 90vw; } }
 
 /*# sourceMappingURL=projects.css.map */
