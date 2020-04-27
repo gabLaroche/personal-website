@@ -159,7 +159,8 @@ h2 {
   height: 350px;
   background: linear-gradient(180deg, #DAEBFA 0%, rgba(255, 255, 255, 0) 150%);
   position: relative;
-  padding: 2rem; }
+  padding: 2rem;
+  overflow: hidden; }
   @media screen and (min-width: 768px) {
     .hero__container {
       height: 540px; } }
