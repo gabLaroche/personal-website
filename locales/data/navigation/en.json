@@ -1,7 +1,7 @@
 {
   "list": [
     {
-      "url": "/en/",
+      "url": "/en",
       "image": {
         "src": "/favicon.ico",
         "alt": "Home"
@@ -9,19 +9,19 @@
     },
     {
       "title": "Projects",
-      "url": "/en/projects/"
+      "url": "/en/projects"
     },
     {
       "title": "Links",
-      "url": "/en/links/"
+      "url": "/en/links"
     },
     {
       "title": "Uses",
-      "url": "/en/uses/"
+      "url": "/en/uses"
     },
     {
       "title": "Code snippets",
-      "url": "/en/snippets/"
+      "url": "/en/snippets"
     }
   ]
 }

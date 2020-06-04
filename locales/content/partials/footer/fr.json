@@ -1,0 +1,36 @@
+{
+  "source": "Construit avec de l'amour et du <a title=\"Lien vers le code source de ce site web\" href=\"https://github.com/gablaroche/personal-website\">code</a>",
+  "copyright": "Gabriel Laroche. Tout droits réservé",
+  "social": [
+    {
+      "href": "mailto:hi@gabriellaroche.dev",
+      "iconClass": "icon-mail",
+      "title": "Courriel"
+    },
+    {
+      "href": "https://dev.to/gablaroche",
+      "iconClass": "icon-dev",
+      "title": "Dev.to"
+    },
+    {
+      "href": "https://github.com/gabLaroche",
+      "iconClass": "icon-github",
+      "title": "Github"
+    },
+    {
+      "href": "https://www.linkedin.com/in/gabriel-laroche-2b3706125/",
+      "iconClass": "icon-linkedin",
+      "title": "Linkedin"
+    },
+    {
+      "href": "https://twitter.com/glarocheDev",
+      "iconClass": "icon-twitter",
+      "title": "Twitter"
+    },
+    {
+      "href": "https://usefathom.com/ref/FQZUZM",
+      "iconClass": "icon-twitter",
+      "title": "Fathom Analytics"
+    }
+  ]
+}

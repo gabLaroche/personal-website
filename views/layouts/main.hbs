@@ -14,17 +14,19 @@
     - Fathom can handle viral content without breaking a sweat, so your site won't slow down because of us.
     -->
     <script>
-        (function(f, a, t, h, o, m){
-            a[h]=a[h]||function(){
-                (a[h].q=a[h].q||[]).push(arguments)
-            };
-            o=f.createElement('script'),
-                    m=f.getElementsByTagName('script')[0];
-            o.async=1; o.src=t; o.id='fathom-script';
-            m.parentNode.insertBefore(o,m)
-        })(document, window, '//stats.hobkit.com/tracker.js', 'fathom');
-        fathom('set', 'siteId', 'FOVSX');
-        fathom('trackPageview');
+        if (window.location.hostname !== 'localhost') {
+            (function(f, a, t, h, o, m){
+                a[h]=a[h]||function(){
+                    (a[h].q=a[h].q||[]).push(arguments)
+                };
+                o=f.createElement('script'),
+                        m=f.getElementsByTagName('script')[0];
+                o.async=1; o.src=t; o.id='fathom-script';
+                m.parentNode.insertBefore(o,m)
+            })(document, window, '//stats.hobkit.com/tracker.js', 'fathom');
+            fathom('set', 'siteId', 'FOVSX');
+            fathom('trackPageview');
+        }
     </script>
     <!-- / Fathom -->
 </head>
@@ -49,26 +51,18 @@
 {{/if}}
 {{{body}}}
 <footer class="footer">
-    {{#if content.footer.social.length}}
+    {{#if footer.social.length}}
         <ul class="footer__social-list">
-            {{#each content.footer.social}}
+            {{#each footer.social}}
                 <li>
                     <a href="{{this.href}}" class="{{this.iconClass}}" title="{{this.title}}"></a>
                 </li>
             {{/each}}
         </ul>
     {{/if}}
-    <p class="footer__copyright"><span class="footer__current-year"></span>&nbsp;{{{content.footer.copyright}}}</p>
-    <p class="footer__source">{{{content.footer.source}}}</p>
+    <p class="footer__copyright">&copy; {{currentYear}}&nbsp;{{{footer.copyright}}}</p>
+    <p class="footer__source">{{{footer.source}}}</p>
 </footer>
-<script type="text/javascript">
-    (function() {
-        const currentYearElem = document.querySelector('.footer__current-year');
-        const currentYear = new Date().getFullYear();
-
-        currentYearElem.innerHTML = `&copy; ${currentYear.toString()}`;
-    }());
-</script>
 <script src="https://unpkg.com/mailgo@0.8.4/dist/mailgo.min.js"></script>
 </body>
 </html>
