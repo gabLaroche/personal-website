@@ -1,0 +1,12 @@
+{
+  "head": {
+    "lang": "fr",
+    "title": "Erreur 404, Page Non trouvée",
+    "cssPath": "/css/pages/404.css"
+  },
+  "body": {
+    "h2": "Page Non trouvée",
+    "notFound": "Nous n'avons pas trouvé: ",
+    "homePage": "Retourner à la page prinicipale"
+  }
+}

@@ -7,13 +7,13 @@
   "switchLang": {
     "title": "Passer en <strong>Français</strong>",
 
-    "url": "/fr/"
+    "url": "/fr"
   },
   "hero": "Hi! I'm <strong>Gabriel Laroche</strong>, your friendly neighbourhood <strong>Web Developer!</strong>",
   "projects": {
     "title": "My Projects",
     "link": {
-      "url": "/en/projects/",
+      "url": "/en/projects",
       "title": "See all of my projects"
     }
   },

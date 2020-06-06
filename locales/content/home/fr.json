@@ -6,13 +6,13 @@
   },
   "switchLang": {
     "title": "Switch to <strong>English</strong>",
-    "url": "/en/"
+    "url": "/en"
   },
   "hero": "Salut! Je suis <strong>Gabriel Laroche</strong>, un <strong>Développeur Web</strong> passionné!",
   "projects": {
     "title": "Mes Projets",
     "link": {
-      "url": "/fr/projets/",
+      "url": "/fr/projets",
       "title": "Voir tous mes projets"
     }
   },

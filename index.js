@@ -56,6 +56,9 @@ app.engine('.hbs', exphbs({...hbs}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views/'));
 
+const renderJson = (category, folder, lang) => {
+    return require(`./locales/${category}/${folder}/${lang}.json`);
+}
 
 app.get("/get", (req, res, next) => {
     res.json({
@@ -69,32 +72,45 @@ app.post('/post', function(request, response) {
 
 app.get('/', (req, res) => {
     lang = req.cookies.lang || req.acceptsLanguages('fr', 'en') || 'en';
-    res.redirect(`/${lang}/`);
+    res.redirect(`/${lang}`);
 });
 
-app.get(`/en/`, (req, res) => {
-    const contentJson = require('./locales/content/home/en.json');
-    const projectJson = require('./locales/data/projects/en.json');
-    res.cookie("lang", 'en');
-    res.render('home', {
-        content: contentJson,
-        projects: projectJson
-    });
-});
+app.get(['/:lang', '/:lang/*'], (req, res, next) => {
+    res.locals.currentYear = new Date().getFullYear();
+    try {
+        res.locals.footer = renderJson('content', 'partials/footer', req.params.lang);
+    } catch {
+        const lang = req.cookies.lang || req.acceptsLanguages('fr', 'en') || 'en';
+        res.locals.footer = renderJson('content', 'partials/footer', lang);
+    }
 
-app.get('/fr/', (req, res) => {
-    const contentJson = require('./locales/content/home/fr.json');
-    const projectJson = require('./locales/data/projects/fr.json');
-    res.cookie("lang", 'fr');
-    res.render('home', {
-        content: contentJson,
-        projects: projectJson
-    });
+    next();
+})
+
+app.get("/:lang", (req, res) => {
+    const lang = req.params.lang;
+    try {
+        const contentJson = renderJson( 'content','home', lang);
+        const projectJson = renderJson('data','projects', lang);
+        res.cookie("lang", lang);
+        res.render('home', {
+            content: contentJson,
+            projects: projectJson
+        });
+    } catch {
+        const url = req.url
+        const lang = req.cookies.lang || req.acceptsLanguages('fr', 'en') || 'en';
+        const contentJson = renderJson( 'content','404', lang);
+        res.status(404).render('404', {
+            url: url,
+            content: contentJson
+        });
+    }
 });
 
 app.get('/en/projects/', (req, res) => {
-    const contentJson = require('./locales/content/projects/en.json');
-    const projectJson = require('./locales/data/projects/en.json');
+    const contentJson = renderJson( 'content','projects', 'en');
+    const projectJson = renderJson('data','projects', 'en');
     res.render('projects', {
         content: contentJson,
         projects: projectJson
@@ -102,66 +118,26 @@ app.get('/en/projects/', (req, res) => {
 });
 
 app.get('/fr/projets/', (req, res) => {
-    const contentJson = require('./locales/content/projects/fr.json');
-    const projectJson = require('./locales/data/projects/fr.json');
+    const contentJson = renderJson( 'content','projects', 'fr');
+    const projectJson = renderJson('data','projects', 'fr');
     res.render('projects', {
         content: contentJson,
         projects: projectJson
     });
 });
 
-app.get('/fr/projects/', (req, res) => {
-    res.redirect('/fr/projets/');
-});
+app.get("*", (req, res) => {
+    let url = req.url
+    let contentJson = {}
+    if (url.includes('/fr')) {
+        contentJson = renderJson( 'content','404', 'fr');
+    } else {
+        contentJson = renderJson( 'content','404', 'en');
+    }
 
-app.get('/en/links/', (req, res) => {
-    const contentJson = require('./locales/content/links/en.json');
-    res.render('links', {content: contentJson});
+    res.status(404).render('404', {
+        url: url,
+        content: contentJson
+    });
 });
-
-app.get('/fr/liens/', (req, res) => {
-    res.redirect('/en/links/');
-});
-
-app.get('/fr/links/', (req, res) => {
-    res.redirect('/fr/liens/');
-});
-
-app.get('/en/snippets/', (req, res) => {
-    const contentJson = require('./locales/content/snippets/en.json');
-    res.render('useful-functions', {content: contentJson});
-});
-
-app.get('/fr/snippets/', (req, res) => {
-    const contentJson = require('./locales/content/snippets/fr.json');
-    res.render('snippets', {content: contentJson});
-});
-
-app.get('/en/uses/', (req, res) => {
-    const contentJson = require('./locales/content/uses/en.json');
-    res.render('uses', {content: contentJson});
-});
-
-app.get('/fr/uses/', (req, res) => {
-    const contentJson = require('./locales/content/uses/fr.json');
-    res.render('uses', {content: contentJson});
-});
-
-/** START Redirect legacy site to proper urls **/
-app.get('/death-to-ie11', (req, res) => {
-    res.redirect('https://death-to-ie11.netlify.com');
-});
-
-app.get('/bored', (req, res) => {
-    res.redirect('https://bored-ui.netlify.com/');
-});
-
-app.get('/simple-toolkit', (req, res) => {
-    res.redirect('https://simple-toolkit.netlify.com');
-});
-
-app.get('/simple-toolkit/simple-case-conversion', (req, res) => {
-    res.redirect('https://simple-case-conversion.netlify.com');
-});
-/** END Redirect legacy site to proper urls **/
 app.listen(port);
