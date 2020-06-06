@@ -1,12 +1,12 @@
 {
   "name": "personal-website",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "~12.13.1"
   },
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon index.js",
     "build-task:scss-compile": "node-sass-chokidar --source-map true src/scss/ -o public/css",
     "build-task:autoprefixer": "postcss public/css/*.css --use autoprefixer -d public/css",
     "sass:build": "npm-run-all -p build-task:*",
