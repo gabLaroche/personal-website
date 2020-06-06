@@ -60,6 +60,8 @@
     display: grid;
     grid-auto-flow: column;
     grid-gap: 10px; }
+  .footer .icon-fathom {
+    background-image: url("../fathom.svg"); }
 
 :root {
   font-size: 10px; }
