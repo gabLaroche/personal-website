@@ -13,7 +13,16 @@
     grid-gap: 10px;
   }
 
-  .icon-fathom {
-    background-image: url("../fathom.svg");
+  .fathom-icon {
+    background: url("../../fathom.svg") no-repeat top left;
+    background-size: contain;
+    width: 3.6rem;
+    height: 3.6rem;
+    display: block;
+    transition: transform 0.35s ease;
+
+    &:hover, &:focus {
+      transform: scale(1.1);
+    }
   }
 }

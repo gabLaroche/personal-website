@@ -11,9 +11,11 @@ $secondaryColour: $light-gray;
 $breakpoint-small: 768px;
 $breakpoint-medium: 1024px;
 $breakpoint-large: 1200px;
+$breakpoint-xlarge: 1440px;
 
 $mediaQueryBreakpoints: (
         sm  : $breakpoint-small,
         md  : $breakpoint-medium,
-        lg  : $breakpoint-large
+        lg  : $breakpoint-large,
+        xlg : $breakpoint-xlarge
 );

@@ -13,7 +13,7 @@
   &__list {
     @include media-up(sm) {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
   }

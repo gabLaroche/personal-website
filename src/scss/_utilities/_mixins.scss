@@ -19,4 +19,7 @@
   @include media-up(md) {
     max-width: 90vw;
   }
+  @include media-up(xlg) {
+    max-width: $breakpoint-large;
+  }
 }

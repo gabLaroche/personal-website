@@ -2,9 +2,9 @@
   "sourceMsg": "Code source",
   "projects": [
     {
-      "title": "Calculatrice Exponentiel",
-      "demoUrl": "https://exponential-calculator.netlify.com/",
-      "sourceUrl": "https://github.com/gablaroche/exponential-calculator"
+      "title": "Recipe Ipsum",
+      "demoUrl": "https://recipe-ipsum.com/",
+      "sourceUrl": "https://github.com/gablaroche/recipe-ipsum"
     },
     {
       "title": "Compte à rebours pour la mort d'IE11",
@@ -25,6 +25,11 @@
       "title": "Interface pour le \"Bored API\"",
       "demoUrl": "https://bored-ui.netlify.com/",
       "sourceUrl": "https://github.com/gablaroche/bored-ui"
+    },
+    {
+      "title": "Calculatrice Exponentiel",
+      "demoUrl": "https://exponential-calculator.netlify.com/",
+      "sourceUrl": "https://github.com/gablaroche/exponential-calculator"
     }
   ]
 }

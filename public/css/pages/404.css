@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'icomoon';
-  src: url("../../fonts/icomoon.eot?5kiojs");
-  src: url("../../fonts/icomoon.eot?5kiojs#iefix") format("embedded-opentype"), url("../../fonts/icomoon.ttf?5kiojs") format("truetype"), url("../../fonts/icomoon.woff?5kiojs") format("woff"), url("../../fonts/icomoon.svg?5kiojs#icomoon") format("svg");
+  src: url("../../fonts/icomoon.eot?ufd1qa");
+  src: url("../../fonts/icomoon.eot?ufd1qa#iefix") format("embedded-opentype"), url("../../fonts/icomoon.ttf?ufd1qa") format("truetype"), url("../../fonts/icomoon.woff?ufd1qa") format("woff"), url("../../fonts/icomoon.svg?ufd1qa#icomoon") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal;
+  font-display: block; }
 
 [class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -14,35 +16,24 @@
   text-transform: none;
   line-height: 1;
   font-size: 3.6rem;
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-logo:before {
+.icon-twitter:before {
   content: "\e900"; }
 
-.icon-codepen:before {
+.icon-github:before {
   content: "\e901"; }
 
-.icon-twitter:before {
+.icon-linkedin:before {
   content: "\e902"; }
 
-.icon-github:before {
+.icon-mail:before {
   content: "\e903"; }
 
 .icon-dev:before {
   content: "\e904"; }
-
-.icon-intagram:before {
-  content: "\e905"; }
-
-.icon-linkedin:before {
-  content: "\e906"; }
-
-.icon-mail:before {
-  content: "\e907"; }
-
-.icon-unsplash:before {
-  content: "\e908"; }
 
 .footer {
   max-width: 85vw;
@@ -51,6 +42,9 @@
   @media screen and (min-width: 1024px) {
     .footer {
       max-width: 90vw; } }
+  @media screen and (min-width: 1440px) {
+    .footer {
+      max-width: 1200px; } }
   @media screen and (min-width: 1024px) {
     .footer {
       display: flex;
@@ -60,8 +54,15 @@
     display: grid;
     grid-auto-flow: column;
     grid-gap: 10px; }
-  .footer .icon-fathom {
-    background-image: url("../fathom.svg"); }
+  .footer .fathom-icon {
+    background: url("../../fathom.svg") no-repeat top left;
+    background-size: contain;
+    width: 3.6rem;
+    height: 3.6rem;
+    display: block;
+    transition: transform 0.35s ease; }
+    .footer .fathom-icon:hover, .footer .fathom-icon:focus {
+      transform: scale(1.1); }
 
 :root {
   font-size: 10px; }
@@ -90,6 +91,9 @@ footer {
   @media screen and (min-width: 1024px) {
     footer {
       max-width: 90vw; } }
+  @media screen and (min-width: 1440px) {
+    footer {
+      max-width: 1200px; } }
 
 ul {
   padding: 0;
@@ -119,6 +123,9 @@ h2 {
   @media screen and (min-width: 1024px) {
     .container {
       max-width: 90vw; } }
+  @media screen and (min-width: 1440px) {
+    .container {
+      max-width: 1200px; } }
   .container h1 {
     font-size: 15rem;
     margin: 1rem 0; }
