@@ -141,3 +141,5 @@ app.get("*", (req, res) => {
     });
 });
 app.listen(process.env.PORT || port, () => console.log(`server is running on http://localhost:${port.toString()}`));
+
+module.exports = app;
