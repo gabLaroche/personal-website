@@ -1,0 +1,108 @@
+.hero {
+  &__container {
+    height: 350px;
+    background: linear-gradient(180deg, $gray-blue 0%, rgba(255, 255, 255, 0) 150%);
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+
+    @include media-up(sm) {
+      height: 540px;
+    }
+  }
+
+  &__switch-lang {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 4rem;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include media-up(sm) {
+      width: 75%;
+      font-size: 7.2rem;
+    }
+  }
+
+  &__bug {
+    display: none;
+
+    @include media-up(sm) {
+      display: block;
+      position: absolute;
+    }
+
+    svg {
+      fill: $primaryColour;
+    }
+  }
+}
+.bug1 {
+  width: 50px;
+  top: 20%;
+  left: 10%;
+  transform: rotate(-28deg);
+}
+
+.bug2 {
+  width: 100px;
+  top: 40%;
+  left: 6%;
+  transform: rotate(33deg);
+}
+
+.bug3 {
+  width: 32px;
+  top: 70%;
+  left: 10%;
+  transform: rotate(-28deg);
+}
+
+.bug4 {
+  width: 40px;
+  top: 40%;
+  right: 10%;
+  transform: rotate(29deg);
+}
+.bug5 {
+  width: 90px;
+  top: 60%;
+  right: 6%;
+  transform: rotate(-35deg);
+}
+
+.wave {
+  position: absolute;
+  width: 100vw;
+  height: 97px;
+  bottom: 0;
+  left: 0;
+  background-image: url("../../wave.svg");
+}
+
+.avatar {
+  position: absolute;
+  width: 65px;
+  top: 1rem;
+  right: auto;
+  bottom: auto;
+  left: 1rem;
+
+  @include media-up(md) {
+    width: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+}

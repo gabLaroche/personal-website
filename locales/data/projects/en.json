@@ -1,20 +1,34 @@
 {
   "sourceMsg": "Source code",
+  "demoMsg": "Demo",
+  "aboutMsg": "About the project",
   "projects": [
     {
       "title": "Recipe Ipsum",
       "demoUrl": "https://recipe-ipsum.com/",
-      "sourceUrl": "https://github.com/gablaroche/recipe-ipsum"
+      "sourceUrl": "https://github.com/gablaroche/recipe-ipsum",
+      "image": {
+        "url": "/images/recipe-ipsum-screenshot.png",
+        "alt": "Screenshot of Recipe Ipsum"
+      }
     },
     {
       "title": "IE11 Death Countdown",
-      "demoUrl": "https://death-to-ie11.netlify.com",
-      "sourceUrl": "https://github.com/gablaroche/death-to-ie11"
+      "demoUrl": "https://death-to-ie11.com",
+      "sourceUrl": "https://github.com/gablaroche/death-to-ie11",
+      "image": {
+        "url": "/images/death-to-ie11-screenshot.png",
+        "alt": "Screenshot of Death to IE 11"
+      }
     },
     {
       "title": "Simple Case Converter",
       "demoUrl": "https://simple-case-conversion.netlify.com",
-      "sourceUrl": "https://github.com/gabLaroche/simple-text-conversion"
+      "sourceUrl": "https://github.com/gabLaroche/simple-text-conversion",
+      "image": {
+        "url": "/images/simple-case-converter-screenshot.png",
+        "alt": "Screenshot of Simple Case Converter"
+      }
     },
     {
       "title": "Lyrics CLI",

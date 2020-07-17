@@ -28,36 +28,5 @@
       "Next.js",
       "TypeScript"
     ]
-  },
-  "footer": {
-    "source": "Built with love and <a title=\"Link to the source code of this website\" href=\"https://github.com/gablaroche/personal-website\">code</a>",
-    "copyright": "Gabriel Laroche. All Rights Reserved",
-    "social": [
-      {
-        "href": "mailto:hi@gabriellaroche.dev",
-        "iconClass": "icon-mail",
-        "title": "E-mail"
-      },
-      {
-        "href": "https://dev.to/gablaroche",
-        "iconClass": "icon-dev",
-        "title": "Dev.to"
-      },
-      {
-        "href": "https://github.com/gabLaroche",
-        "iconClass": "icon-github",
-        "title": "Github"
-      },
-      {
-        "href": "https://www.linkedin.com/in/gabriel-laroche-2b3706125/",
-        "iconClass": "icon-linkedin",
-        "title": "Linkedin"
-      },
-      {
-        "href": "https://twitter.com/glarocheDev",
-        "iconClass": "icon-twitter",
-        "title": "Twitter"
-      }
-    ]
   }
 }
