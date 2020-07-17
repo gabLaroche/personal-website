@@ -12,6 +12,10 @@ app.use(express.static(__dirname + '/public'));
 let lang = 'en';
 
 const hbs = exphbs.create({
+    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/',
+    extname: '.hbs',
     helpers: {
         each_upto: function(ary, max, options) {
             if(!ary || ary.length == 0) {
@@ -49,9 +53,9 @@ const hbs = exphbs.create({
                     return options.inverse(this);
             }
         }
-    },
-    extname: '.hbs'
+    }
 });
+
 app.engine('.hbs', exphbs({...hbs}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views/'));

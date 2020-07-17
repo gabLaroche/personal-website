@@ -1,0 +1,22 @@
+<li class="projects__list-item">
+    <div class="projects__list-item-image-ctn">
+        {{#if this.image }}
+            <img src="{{this.image.url}}" alt="{{this.image.alt}}" />
+        {{else}}
+            <img src="/images/no-image-found.png" alt="No image for this projects" />
+        {{/if}}
+        <div class="projects__list-item-ctn">
+            {{#if this.demoUrl}}
+                <a class="projects__list-item--demo projects__list-item-link" href="{{this.demoUrl}}">{{demoMsg}}</a>
+            {{/if}}
+            {{#if this.sourceUrl}}
+                <a class="projects__list-item--source projects__list-item-link" href="{{this.sourceUrl}}">{{sourceMsg}}</a>
+            {{/if}}
+            {{#if this.aboutUrl}}
+                <a class="projects__list-item--about projects__list-item-link" href="{{this.aboutUrl}}">{{aboutMsg}}</a>
+            {{/if}}
+        </div>
+        <button class="projects__list-item-btn" aria-label="Open project link menu" title="Open project link menu"></button>
+    </div>
+    <span class="projects__list-item-title">{{this.title}}</span>
+</li>
