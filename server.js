@@ -2,9 +2,34 @@ const express = require('express');
 const path = require('path');
 const exphbs  = require('express-handlebars');
 const cookieParser = require('cookie-parser');
+const sanityClient = require('@sanity/client');
 
 const app = express();
 const port = 3030;
+
+const client = sanityClient({
+    projectId: '88zy4cq2',
+    dataset: 'production',
+    token: '', // or leave blank to be anonymous user
+    useCdn: false // `false` if you want to ensure fresh data
+});
+
+function localize(value, languages) {
+    if (Array.isArray(value)) {
+        return value.map(v => localize(v, languages))
+    } else if (typeof value == 'object') {
+        if (/^locale[A-Z]/.test(value._type)) {
+            const language = languages.find(lang => value[lang])
+            return value[language]
+        }
+
+        return Object.keys(value).reduce((result, key) => {
+            result[key] = localize(value[key], languages)
+            return result
+        }, {})
+    }
+    return value
+}
 
 app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
@@ -129,6 +154,19 @@ app.get('/fr/projets/', (req, res) => {
         projects: projectJson
     });
 });
+
+app.get('/en/project-test', (req, res) => {
+    const query = '*[_type == "project"]'
+
+    client.fetch(query).then(projects => {
+        console.log('projects: ', projects);
+        res.send(localize(projects, ['fr']))
+    })
+})
+
+app.get('/fr/projet-test', (req, res) => {
+
+})
 
 app.get("*", (req, res) => {
     let url = req.url

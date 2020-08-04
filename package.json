@@ -30,6 +30,7 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "@sanity/client": "^1.149.18",
     "autoprefixer": "^9.7.3",
     "chokidar-cli": "^2.1.0",
     "cloudinary": "^1.22.0",
