@@ -367,15 +367,19 @@ h2 {
   color: #013355;
   font-size: 1.8rem;
   margin: 1rem;
-  transform: translateY(0px);
-  animation: float 6s ease-in-out infinite; }
+  transform: translateY(0px); }
+  @media (prefers-reduced-motion: no-preference) {
+    .skills__list-item {
+      animation: float 6s ease-in-out infinite; } }
   @media screen and (min-width: 768px) {
     .skills__list-item {
       margin: 0.5rem;
       width: 100px;
       height: 100px; }
       .skills__list-item:nth-child(2n) {
-        transform: translateY(-2rem);
+        transform: translateY(-2rem); } }
+    @media screen and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+      .skills__list-item:nth-child(2n) {
         animation: float2 6s ease-in-out infinite; } }
   .skills__list-item:before {
     content: "";

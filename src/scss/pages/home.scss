@@ -34,7 +34,9 @@
     font-size: 1.8rem;
     margin: 1rem;
     transform: translateY(0px);
-    animation: float 6s ease-in-out infinite;
+    @media (prefers-reduced-motion: no-preference) {
+      animation: float 6s ease-in-out infinite;
+    }
 
     @include media-up(sm) {
       margin: 0.5rem;
@@ -43,7 +45,10 @@
 
       &:nth-child(2n) {
         transform: translateY(-2rem);
-        animation: float2 6s ease-in-out infinite;
+
+        @media (prefers-reduced-motion: no-preference) {
+          animation: float2 6s ease-in-out infinite;
+        }
       }
     }
 
